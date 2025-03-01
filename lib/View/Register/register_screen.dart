@@ -13,51 +13,42 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery
-        .of(context)
-        .size;
     return SafeArea(
       child: Scaffold(
-          body: SingleChildScrollView(
+        body: Center(
+          child: SingleChildScrollView(
             child: Container(
               padding: const EdgeInsets.all(tDefaultSize),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // -- Section - 1 --
-                  Image(
-                    image: AssetImage(welcomeScreenImage),
-                    height: size.height * 0.2,
-                  ),
                   Text(
                     registerTitleString,
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .headlineLarge,
+                    style: Theme.of(context).textTheme.headlineLarge,
+                    textAlign: TextAlign.center,
                   ),
                   Text(
                     registerSubtitleString,
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .bodyMedium,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: tFormHeight),
                   // -- .end - 1 --
 
                   // -- Section - 2 --
                   Container(
-                    padding:
-                    const EdgeInsets.symmetric(vertical: tFormHeight - 10),
+                    padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),
                     child: Form(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFormField(
                             decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.person_outline_rounded),
-                                label: Text(fullnameString),
-                                ),
+                              prefixIcon: Icon(Icons.person_outline_rounded),
+                              label: Text(fullnameString),
+                            ),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -97,12 +88,10 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-              
                   // -- .end - 2--
 
                   // -- Section - 3 --
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text("OR"),
                       const SizedBox(height: tFormHeight - 20),
@@ -126,19 +115,15 @@ class RegisterScreen extends StatelessWidget {
                                     builder: (context) => LoginScreen()));
                           },
                           child: Text.rich(
-                              TextSpan(
-                                  text: alreadyHaveAnAccountString,
-                                  style: Theme
-                                      .of(context)
-                                      .textTheme
-                                      .bodyLarge,
-                                  children: const[
-                                    TextSpan(
-                                      text: " " + loginString,
-                                      style: TextStyle(color: Colors.blue),
-                                    )
-                                  ]
-                              )
+                            TextSpan(
+                                text: alreadyHaveAnAccountString,
+                                style: Theme.of(context).textTheme.bodyLarge,
+                                children: const [
+                                  TextSpan(
+                                    text: " " + loginString,
+                                    style: TextStyle(color: Colors.blue),
+                                  )
+                                ]),
                           ))
                     ],
                   )
@@ -146,7 +131,9 @@ class RegisterScreen extends StatelessWidget {
                 ],
               ),
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

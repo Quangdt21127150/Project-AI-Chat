@@ -114,7 +114,7 @@ class _EmailComposerState extends State<EmailComposer> {
         actions: [
           Spacer(),
           Container(
-            width: MediaQuery.of(context).size.width / 9,
+            width: 140,
             child: AIDropdown(
               listAIItems: _listAIItems,
               onChanged: (value) {

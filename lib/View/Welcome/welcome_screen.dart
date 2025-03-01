@@ -64,6 +64,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_ai_chat/View/Login/login_screen.dart';
+import 'package:project_ai_chat/View/Register/register_screen.dart';
 import 'package:project_ai_chat/constants/colors.dart';
 import 'package:project_ai_chat/constants/image_strings.dart';
 import 'package:project_ai_chat/constants/sizes.dart';
@@ -121,7 +122,12 @@ class WelcomeScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButtonCustom(
                       text: registerString.toUpperCase(),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => RegisterScreen()),
+                        );
+                      },
                     ),
                   ),
                 ],

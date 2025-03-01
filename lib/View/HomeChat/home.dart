@@ -67,7 +67,7 @@ class _HomeChatState extends State<HomeChat> {
     } else if (index == 3) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const AccountScreent()),
+        MaterialPageRoute(builder: (context) => const AccountScreen()),
       );
     }
   }
@@ -98,7 +98,7 @@ class _HomeChatState extends State<HomeChat> {
       }
       Provider.of<MessageModel>(context, listen: false).addMessage({
         'sender': 'bot',
-        'text': 'This is a bot response.',
+        'text': 'Hello.',
       });
       _controller.clear();
       _listAIItem.firstWhere((aiItem) => aiItem.name == selectedAIItem).tokenCount -= 1;
@@ -447,7 +447,7 @@ class _HomeChatState extends State<HomeChat> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width / 9,
+                          width: 140,
                           child: AIDropdown(
                             listAIItems: _listAIItem,
                             onChanged: (String? newValue) {
